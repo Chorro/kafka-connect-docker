@@ -15,10 +15,17 @@ rm -f -r kafka-connect-mqtt
 
 #### Syslog Instalation ####
 rm -f -r kafka-connect-syslog
-git clone https://github.com/jcustenborder/kafka-connect-syslog.git
+git clone https://github.com/wizzie-io/kafka-connect-syslog.git
 (cd kafka-connect-syslog; git checkout 0.2.15; mvn clean package; tar -xvf target/kafka-connect-syslog-0.2-SNAPSHOT.tar.gz)
 cp -r kafka-connect-syslog/usr/share/java/kafka-connect-syslog/ ./kafka-connect/libs/
 rm -f -r kafka-connect-syslog
+
+#### Aerohive Installation ####
+rm -rf kafka-connect-Aerohive
+git clone https://github.com/wizzie-io/kafka-connect-aerohive.git
+(cd kafka-connect-aerohive; mvn clean package;)
+cp -r kafka-connect-aerohive/target/kafka-connect-aerohive-*.jar ./kafka-connect/libs/
+rm -rf -r kafka-connect-aerohive
 
 #### Docker Build ####
 
