@@ -22,7 +22,7 @@ rm -f -r kafka-connect-syslog
 
 #### Aerohive Installation ####
 rm -rf kafka-connect-Aerohive
-git clone https://github.com/wizzie-io/kafka-connect-aerohive.git
+git clone git@github.com:wizzie-io/kafka-connect-aerohive.git
 (cd kafka-connect-aerohive; mvn clean package;)
 cp -r kafka-connect-aerohive/target/kafka-connect-aerohive-*.jar ./kafka-connect/libs/
 rm -rf -r kafka-connect-aerohive
